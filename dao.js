@@ -24,13 +24,13 @@ const Order = sequelize.define("orderuser", {
   orderID: {
     primaryKey: true,
     type: DataTypes.INTEGER,
-    defaultValue: Sequelize.INTEGER,
-    allowNull: false
+    allowNull: false,
+    autoIncrement: true
   },
   orderNum: {
     type: DataTypes.INTEGER,
-    defaultValue: Sequelize.INTEGER,
-    allowNull: false
+    defaultValue: 1,
+    allowNull: false,
   },
   orderDate: {
     type: DataTypes.DATE,
@@ -95,8 +95,8 @@ const productOrder = sequelize.define("productorder",{
   orderProductID : {
       primaryKey : true,
       type : DataTypes.INTEGER,
-      defaultValue : Sequelize.INTEGER,
-      allowNull : false
+      allowNull : false,
+      autoIncrement: true
   },
   orderID : {
       type : DataTypes.INTEGER,
@@ -105,7 +105,11 @@ const productOrder = sequelize.define("productorder",{
   productID : {
       type : DataTypes.INTEGER,
       allowNull : false
-  }
+  },
+  Quantity : {
+    type : DataTypes.INTEGER,
+    allowNull : false
+}
 },{
   timestamps : false,
   freezeTableName : true
