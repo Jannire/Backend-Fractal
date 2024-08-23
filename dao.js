@@ -1,13 +1,14 @@
 const { Sequelize, DataTypes } = require("sequelize");
+require('dotenv').config();
 
 //Conection DB - MySQL
 const sequelize = new Sequelize(
-  'store',
-  'root',
-  'user',
+  process.env.name,
+  process.env.user,
+  process.env.paskey,
   {
-    host: 'localhost',
-    dialect: 'mysql'
+    host: process.env.hostname,
+    dialect: 'postgres'
   }
 );
 
