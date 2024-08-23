@@ -3,7 +3,7 @@ const { Op } = require("sequelize")
 const app = express()
 const bodyParser = require("body-parser")
 const cors = require("cors")
-const { Order, productOrder, Product } = require("./DAO")
+const { Order, productOrder, Product } = require("./dao")
 const port = 3000
 
 app.use(bodyParser.json())
